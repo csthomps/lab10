@@ -18,6 +18,7 @@ else:
     
 
 selected_year = st.selectbox('Select a year',df['year'].unique())
+st.select_slider('Select a year',df['year'].unique())
 year_df = df[df['year'] == selected_year]
 girlnames = year_df[year_df['sex'] == 'F'].sort_values(by='n',ascending=False).head(5)['name'].reset_index(drop=True)
 boynames = year_df[year_df['sex'] == 'M'].sort_values(by='n',ascending=False).head(5)['name'].reset_index(drop=True)
